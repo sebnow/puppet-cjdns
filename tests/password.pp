@@ -1,0 +1,2 @@
+cjdns::password {"thisIsNotARealPAssword": }
+
