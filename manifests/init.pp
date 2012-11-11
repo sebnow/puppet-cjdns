@@ -117,9 +117,9 @@ class cjdns (
     $package_ensure = absent
   }
 
-	package {$package:
-		ensure => $package_ensure,
-	}
+  package {$package:
+    ensure => $package_ensure,
+  }
 
   if $ensure == 'absent' {
     file {$conf_path:
@@ -185,11 +185,11 @@ class cjdns (
     }
   }
 
-	service {$service:
+  service {$service:
     enable    => $service_enable,
-		ensure    => $service_ensure,
-		require   => [Package[$package], Augeas[$augeas]],
+    ensure    => $service_ensure,
+    require   => [Package[$package], Augeas[$augeas]],
     subscribe => Augeas[$augeas],
-	}
+  }
 }
 
